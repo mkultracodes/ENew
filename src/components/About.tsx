@@ -1,64 +1,46 @@
 
 import { motion } from 'framer-motion';
-import { Brain, Code, Cpu, Database, LineChart, Server } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const About = () => {
   const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 }
   };
 
-  const services = [
+  const values = [
     {
-      icon: <Brain className="h-8 w-8 text-primary" />,
-      title: "Machine Learning",
-      description: "Creating custom ML models for classification, regression, and clustering tasks."
+      title: "Value",
+      description: "Take the time to understand our customers and their needs"
     },
     {
-      icon: <Code className="h-8 w-8 text-primary" />,
-      title: "ML Engineering",
-      description: "Building robust ML pipelines with TensorFlow, PyTorch and scikit-learn."
+      title: "Staff",
+      description: "Recruit and retain the best talent. Quickly assess customer needs and match them with the proper team to ensure max success"
     },
     {
-      icon: <LineChart className="h-8 w-8 text-primary" />,
-      title: "Natural Language Processing",
-      description: "Implementing text analysis, sentiment analysis and language generation."
-    },
-    {
-      icon: <Cpu className="h-8 w-8 text-primary" />,
-      title: "Deep Learning",
-      description: "Developing neural networks for complex pattern recognition tasks."
-    },
-    {
-      icon: <Database className="h-8 w-8 text-primary" />,
-      title: "Data Engineering",
-      description: "Creating ETL pipelines and data infrastructure for AI applications."
-    },
-    {
-      icon: <Server className="h-8 w-8 text-primary" />,
-      title: "AI Consulting",
-      description: "Providing guidance on AI implementation and best practices."
+      title: "Determination",
+      description: "Continually strive to understand and meet new requirements and objectives"
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-secondary/30">
-      <div className="section-container">
+    <section id="about" className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           variants={fadeInUp}
         >
-          <h2 className="section-title">About Me</h2>
-          <p className="text-xl text-muted-foreground">
-            As an AI engineer with a passion for creating intelligent solutions, I bring expertise in machine learning, deep learning, and data science to solve complex problems and drive innovation.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Who We Are</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            We are a dynamic young company, made up of enthusiastic teams who offer effective and creative solutions to our valued clients.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             className="space-y-6"
             initial="hidden"
@@ -67,46 +49,84 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             variants={fadeInUp}
           >
-            <h3 className="text-3xl font-bold">My Journey</h3>
-            <p className="text-lg text-muted-foreground">
-              With a background in computer science and mathematics, I've spent the past several years building AI systems that provide real value. From startups to established enterprises, I've worked across diverse domains including healthcare, finance, and e-commerce.
+            <h3 className="text-2xl font-bold">Our Story</h3>
+            <p className="text-muted-foreground">
+              Eyrie Networks, LLC is a Minority Owned, Small Disadvantaged Business (SDB) that was founded in 2018.
             </p>
-            <p className="text-lg text-muted-foreground">
-              My approach combines technical excellence with a focus on practical applications. I believe in creating AI solutions that are not only powerful but also interpretable, ethical, and aligned with business objectives.
+            <p className="text-muted-foreground">
+              Our mission is to be the preferred company that provides the best proactive and innovative solutions. We strive for solutions that are affordable and highly available, maintainable, secure, and extensible.
             </p>
-            <div className="pt-4">
-              <motion.a
-                href="#projects"
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium inline-block shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                See My Work
-              </motion.a>
-            </div>
+            <p className="text-muted-foreground">
+              Our analysis approach transcends technology trends and incorporates optimal solutions for each customer's environment and challenges.
+            </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            className="space-y-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            variants={fadeInUp}
           >
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                className="glass-card p-6 rounded-xl hover:shadow-2xl transition-all"
-                variants={fadeInUp}
-                whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-              >
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
-              </motion.div>
-            ))}
+            <h3 className="text-2xl font-bold">Our Values</h3>
+            <div className="space-y-4">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  className="glass-card p-6 rounded-xl"
+                  whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                >
+                  <div className="flex gap-4">
+                    <div className="mt-1">
+                      <div className="bg-primary/10 p-2 rounded-full">
+                        <Check className="h-5 w-5 text-primary" />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold mb-2">{value.title}</h4>
+                      <p className="text-muted-foreground text-sm">{value.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
+
+        <motion.div
+          className="mt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="glass-card p-6 rounded-xl">
+              <h4 className="text-xl font-bold mb-4">Expertise</h4>
+              <p className="text-muted-foreground">
+                We strive to incorporate the appropriate technical expertise, process improvement, and innovation to deliver the quality solutions that our customers have come to expect from us.
+              </p>
+            </div>
+            <div className="glass-card p-6 rounded-xl">
+              <h4 className="text-xl font-bold mb-4">Distinctive Ability</h4>
+              <p className="text-muted-foreground">
+                Our customers have openly reported that they contact Eyrie Networks because of our distinctive ability to quickly assess their needs and offer innovative solutions that routinely exceed their expectations.
+              </p>
+            </div>
+            <div className="glass-card p-6 rounded-xl">
+              <h4 className="text-xl font-bold mb-4">Agile Approach</h4>
+              <p className="text-muted-foreground">
+                Due to the agile nature of our business model, our teams are able to quickly adapt to the client's dynamic environment to ensure that we deliver the solutions that they need to successfully achieve their goals.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

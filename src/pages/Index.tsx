@@ -1,11 +1,12 @@
 
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Services from '../components/Services';
 import About from '../components/About';
-import Projects from '../components/Projects';
-import Skills from '../components/Skills';
+import Careers from '../components/Careers';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ParticleCanvas from '../components/ui/particle-canvas';
@@ -27,9 +28,9 @@ const Index = () => {
         <Navbar />
         <main>
           <Hero />
+          <Services />
           <About />
-          <Projects />
-          <Skills />
+          <Careers />
           <Contact />
         </main>
         <Footer />

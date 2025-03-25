@@ -42,7 +42,7 @@ const ParticleCanvas = () => {
         const y = Math.random() * canvas.height;
         const dirX = Math.random() * 0.2 - 0.1;
         const dirY = Math.random() * 0.2 - 0.1;
-        const color = `rgba(66, 153, 225, ${Math.random() * 0.5 + 0.1})`;
+        const color = `rgba(13, 110, 253, ${Math.random() * 0.5 + 0.1})`; // Blue color to match branding
         const speed = Math.random() * 0.5 + 0.1;
         const alpha = Math.random() * 0.5 + 0.1;
 
@@ -101,7 +101,7 @@ const ParticleCanvas = () => {
           
           if (distance < maxDistance) {
             const opacity = 1 - distance / maxDistance;
-            ctx.strokeStyle = `rgba(66, 153, 225, ${opacity * 0.15})`;
+            ctx.strokeStyle = `rgba(13, 110, 253, ${opacity * 0.15})`; // Blue color to match branding
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -118,14 +118,16 @@ const ParticleCanvas = () => {
     draw();
     
     // Handle resize
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       setCanvasSize();
       createParticles();
-    });
+    };
+    
+    window.addEventListener("resize", handleResize);
     
     return () => {
       window.cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("resize", setCanvasSize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
   

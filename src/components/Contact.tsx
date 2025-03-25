@@ -1,204 +1,157 @@
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
-import { toast } from 'sonner';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success('Message sent successfully! I will get back to you soon.');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
-  const contactInfo = [
-    {
-      icon: <Mail className="h-6 w-6 text-primary" />,
-      title: "Email",
-      info: "contact@aiportfolio.com",
-      link: "mailto:contact@aiportfolio.com"
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-primary" />,
-      title: "Phone",
-      info: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
-    },
-    {
-      icon: <MapPin className="h-6 w-6 text-primary" />,
-      title: "Location",
-      info: "San Francisco, CA",
-      link: "#"
-    }
-  ];
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    // Form submission logic would go here
+    console.log('Form submitted');
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="section-container">
+    <section id="contact" className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           variants={fadeInUp}
         >
-          <h2 className="section-title">Get in Touch</h2>
-          <p className="text-xl text-muted-foreground">
-            Have a project in mind or want to discuss collaboration opportunities? I'd love to hear from you.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            We would love to hear from you! If you have any questions, please do not hesitate to send us a message. We reply within 24 hours.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div
-            className="lg:col-span-2 space-y-8"
+            className="glass-card p-8 rounded-xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.div variants={fadeInUp}>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <p className="text-muted-foreground mb-8">
-                Feel free to reach out through any of these channels. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-              </p>
-            </motion.div>
-
+            <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
             <div className="space-y-6">
-              {contactInfo.map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={item.link}
-                  className="flex items-center gap-4 p-4 glass-card rounded-xl hover:shadow-lg transition-all"
-                  variants={fadeInUp}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="flex-shrink-0">{item.icon}</div>
-                  <div>
-                    <h4 className="font-medium">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.info}</p>
-                  </div>
-                </motion.a>
-              ))}
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <Phone className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-semibold">Phone</h4>
+                  <p className="text-muted-foreground">(202) 525-6460</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <Mail className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-semibold">Email</h4>
+                  <p className="text-muted-foreground">info@eyrienetworks.com</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <MapPin className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-semibold">Office</h4>
+                  <p className="text-muted-foreground">Washington, DC</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <h3 className="text-2xl font-bold mb-6">Business Hours</h3>
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span>Monday - Friday:</span>
+                  <span>9:00 AM - 5:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Saturday - Sunday:</span>
+                  <span>Closed</span>
+                </div>
+              </div>
             </div>
           </motion.div>
 
           <motion.div
-            className="lg:col-span-3"
+            className="glass-card p-8 rounded-xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
             variants={fadeInUp}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card p-8 rounded-xl space-y-6">
-              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <h3 className="text-2xl font-bold mb-6">Write A Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
+                  <label htmlFor="name" className="block text-sm font-medium">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                     required
+                    className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
+                  <label htmlFor="email" className="block text-sm font-medium">
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                     required
+                    className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
               </div>
-
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">
-                  Subject
+                <label htmlFor="phone" className="block text-sm font-medium">
+                  Phone
                 </label>
                 <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                  required
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
-
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
+                <label htmlFor="message" className="block text-sm font-medium">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                   required
+                  className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                 ></textarea>
               </div>
-
               <motion.button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all flex items-center justify-center gap-2"
+                className="px-6 py-3 bg-primary text-white rounded-md font-medium shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all w-full md:w-auto"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                disabled={isSubmitting}
               >
-                {isSubmitting ? (
-                  <span>Sending...</span>
-                ) : (
-                  <>
-                    Send Message <ArrowRight size={16} />
-                  </>
-                )}
+                Send Message
               </motion.button>
             </form>
           </motion.div>

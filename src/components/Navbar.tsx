@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,17 +20,17 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        isScrolled ? 'glass-nav py-3' : 'bg-transparent py-5'
+        isScrolled ? 'glass-nav py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,9 +40,11 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <a href="#home" className="text-2xl font-bold">
-              AI<span className="text-primary">Engineer</span>
-            </a>
+            <Link to="/" className="flex items-center">
+              <span className="text-2xl font-bold text-primary">
+                EYRIE <span className="text-foreground">NETWORKS</span>
+              </span>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -52,20 +55,23 @@ const Navbar = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.div
                 key={item.name}
-                href={item.href}
-                className={`text-sm font-medium animated-link ${
-                  isScrolled ? 'text-foreground' : 'text-foreground'
-                }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
               >
-                {item.name}
-              </motion.a>
+                <Link 
+                  to={item.href}
+                  className={`text-sm font-medium animated-link ${
+                    isScrolled ? 'text-foreground' : 'text-foreground'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             ))}
           </motion.nav>
 
@@ -98,17 +104,20 @@ const Navbar = () => {
         >
           <div className="px-4 py-3 space-y-1">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.div
                 key={item.name}
-                href={item.href}
-                className="block py-2 text-base font-medium text-foreground"
-                onClick={() => setIsMobileMenuOpen(false)}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                {item.name}
-              </motion.a>
+                <Link
+                  to={item.href}
+                  className="block py-2 text-base font-medium text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </motion.div>
