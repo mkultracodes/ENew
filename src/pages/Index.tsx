@@ -10,6 +10,7 @@ import Careers from '../components/Careers';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ParticleCanvas from '../components/ui/particle-canvas';
+import FloatingImages from '../components/ui/floating-images';
 
 const Index = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const Index = () => {
         className="min-h-screen flex flex-col"
       >
         <ParticleCanvas />
+        <FloatingImages />
         <Navbar />
         <main>
           <Hero />
