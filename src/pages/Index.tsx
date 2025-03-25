@@ -1,7 +1,6 @@
 
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
@@ -22,11 +21,11 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="min-h-screen flex flex-col"
+        className="min-h-screen flex flex-col w-full overflow-x-hidden"
       >
         <ParticleCanvas />
         <Navbar />
-        <main>
+        <main className="flex-1 w-full">
           <Hero />
           <Services />
           <About />
