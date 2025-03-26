@@ -41,9 +41,12 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary">
-                EYRIE <span className="text-foreground">NETWORKS</span>
-              </span>
+              <img 
+                src="/lovable-uploads/178f4ecb-9d40-41a2-9b3c-7a8504421103.png" 
+                alt="Eyrie Networks Logo" 
+                className="h-8 md:h-10 w-auto"
+                style={{ filter: 'brightness(0) saturate(100%) invert(36%) sepia(72%) saturate(2406%) hue-rotate(198deg) brightness(101%) contrast(101%)' }}
+              />
             </Link>
           </motion.div>
 

@@ -11,11 +11,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold">
-                EYRIE NETWORKS
-              </span>
+              <img 
+                src="/lovable-uploads/178f4ecb-9d40-41a2-9b3c-7a8504421103.png" 
+                alt="Eyrie Networks Logo" 
+                className="h-8 md:h-10 w-auto"
+                style={{ filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)' }}
+              />
             </Link>
-            <p className="text-white/80 max-w-md">
+            <p className="text-white/80 max-w-md mt-4">
               Our mission at Eyrie Networks is to provide customers with high quality IT Services that include architecture, design, and integration of new or modernization of legacy IT solutions.
             </p>
           </div>
