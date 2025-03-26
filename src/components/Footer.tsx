@@ -59,7 +59,7 @@ const Footer = () => {
                 <span>(202) 525-6460</span>
               </li>
               <li>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/eyrie-networks/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
                   <Linkedin size={16} />
                   <span>LinkedIn</span>
                 </a>
