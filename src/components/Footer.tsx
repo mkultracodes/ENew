@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="inline-block mb-6">
               <img 
-                src="/lovable-uploads/178f4ecb-9d40-41a2-9b3c-7a8504421103.png" 
+                src="/lovable-uploads/c6a3cf2a-6caa-47b7-8266-4623420f040f.png" 
                 alt="Eyrie Networks Logo" 
                 className="h-8 md:h-10 w-auto"
                 style={{ filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)' }}
