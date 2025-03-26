@@ -42,7 +42,7 @@ const Navbar = () => {
           >
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/c6a3cf2a-6caa-47b7-8266-4623420f040f.png" 
+                src="/lovable-uploads/eaabb0a0-f417-4cef-a8bc-a15e063f5fbb.png" 
                 alt="Eyrie Networks Logo" 
                 className="h-8 md:h-10 w-auto"
               />
