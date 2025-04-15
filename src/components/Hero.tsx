@@ -140,7 +140,7 @@ const Hero = () => {
             animate="visible"
             variants={fadeInUp}
             transition={{ delay: 0.4 }}
-            className="flex flex-wrap gap-3 sm:gap-4"
+            className="flex flex-wrap items-center gap-3 sm:gap-4" // Updated to use items-center
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
