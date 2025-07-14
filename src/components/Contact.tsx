@@ -6,7 +6,6 @@ import { useState } from 'react';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     message: ''
   });
@@ -38,7 +37,6 @@ const Contact = () => {
         // Optional: Reset form or show success message
         setFormData({
           name: '',
-          email: '',
           phone: '',
           message: ''
         });
@@ -52,7 +50,7 @@ const Contact = () => {
   };
 
   const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
 
@@ -64,7 +62,7 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           variants={fadeInUp}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
@@ -80,7 +78,7 @@ const Contact = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
             <div className="space-y-6">
@@ -134,42 +132,36 @@ const Contact = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
           >
-            <h3 className="text-2xl font-bold mb-6">Write A Message</h3>
+            <h3 className="text-2xl font-bold mb-2">
+              <a 
+                href="mailto:mhemingway@eyrienetworks.com" 
+                className="text-primary hover:underline"
+              >
+                Write A Message
+              </a>
+            </h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Click the title above to send an email directly, or use the form below.
+            </p>
             <form 
               onSubmit={handleSubmit} 
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-medium">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-sm font-medium">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="name" className="block text-sm font-medium">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                />
               </div>
               <div className="space-y-2">
                 <label htmlFor="phone" className="block text-sm font-medium">
