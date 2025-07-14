@@ -1,11 +1,12 @@
 
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     phone: '',
     message: ''
   });
@@ -37,6 +38,7 @@ const Contact = () => {
         // Optional: Reset form or show success message
         setFormData({
           name: '',
+          email: '',
           phone: '',
           message: ''
         });
@@ -93,15 +95,6 @@ const Contact = () => {
               </div>
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-full">
-                  <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Email</h4>
-                  <p className="text-muted-foreground">info@eyrienetworks.com</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-full">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -134,34 +127,40 @@ const Contact = () => {
             variants={fadeInUp}
             transition={{ duration: 0.4, delay: 0.15 }}
           >
-            <h3 className="text-2xl font-bold mb-2">
-              <a 
-                href="mailto:mhemingway@eyrienetworks.com" 
-                className="text-primary hover:underline"
-              >
-                Write A Message
-              </a>
-            </h3>
-            <p className="text-sm text-muted-foreground mb-6">
-              Click the title above to send an email directly, or use the form below.
-            </p>
+            <h3 className="text-2xl font-bold mb-6">Write A Message</h3>
             <form 
               onSubmit={handleSubmit} 
               className="space-y-6"
             >
-              <div className="space-y-2">
-                <label htmlFor="name" className="block text-sm font-medium">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="block text-sm font-medium">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="block text-sm font-medium">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
               </div>
               <div className="space-y-2">
                 <label htmlFor="phone" className="block text-sm font-medium">
