@@ -1,6 +1,8 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import About from '../components/About';
@@ -25,7 +27,7 @@ const AboutPage = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{ 
-              backgroundImage: 'url(https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop)', 
+              backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop)', 
               filter: 'brightness(0.5)'
             }}
           />
@@ -36,16 +38,29 @@ const AboutPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              About Us
+              About Eyrie Networks
             </motion.h1>
             <motion.p 
-              className="text-xl text-white/90 max-w-3xl mx-auto"
+              className="text-xl text-white/90 max-w-3xl mx-auto mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              To be the preferred company that provides the best proactive and innovative solutions.
+              Founded with a vision to empower businesses through innovative technology solutions.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Link 
+                to="/contact"
+                className="px-6 py-3 bg-primary text-white rounded-md font-medium inline-flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
+              >
+                Contact Us
+                <ArrowRight size={16} />
+              </Link>
+            </motion.div>
           </div>
         </section>
         
