@@ -40,62 +40,14 @@ const Services = () => {
   return (
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Current Contracts Section */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-24"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
           transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We strive to incorporate the appropriate technical expertise, process improvement, and innovation to deliver quality solutions.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-            >
-              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
-                <CardHeader>
-                  <div className="mb-4">{service.icon}</div>
-                  <CardTitle>{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-foreground/70 text-sm">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-                <CardFooter>
-                  <Link 
-                    to={service.link} 
-                    className="text-primary flex items-center gap-1 text-sm font-medium hover:underline"
-                  >
-                    Learn more <ArrowRight size={14} />
-                  </Link>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Current Contracts Section */}
-        <motion.div
-          className="mt-24"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeInUp}
-          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Current Contracts</h3>
@@ -115,9 +67,8 @@ const Services = () => {
             >
               <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-lg">SETIS</CardTitle>
-                  <p className="text-sm text-muted-foreground font-mono">693KA8-22-D-00020</p>
-                  <p className="text-sm text-muted-foreground">Systems Engineering and Technical Innovative Solutions</p>
+                  <CardTitle className="text-lg">Systems Engineering and Technical Innovative Solutions (SETIS)</CardTitle>
+                  <p className="text-sm text-muted-foreground font-mono">Contract awarded: 693KA8-22-D-00020</p>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-foreground/70 text-sm">
@@ -138,7 +89,7 @@ const Services = () => {
               <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-lg">FAA Program Support Services (PSS)</CardTitle>
-                  <p className="text-sm text-muted-foreground font-mono">693KA921D00004</p>
+                  <p className="text-sm text-muted-foreground font-mono">Contract awarded: 693KA921D00004</p>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-foreground/70 text-sm">
@@ -158,9 +109,8 @@ const Services = () => {
             >
               <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-lg">ATEPS II</CardTitle>
-                  <p className="text-sm text-muted-foreground font-mono">693KA9-18-D-00012</p>
-                  <p className="text-sm text-muted-foreground">Air Traffic Engineering and Program Support II</p>
+                  <CardTitle className="text-lg">Air Traffic Engineering and Program Support II (ATEPS II)</CardTitle>
+                  <p className="text-sm text-muted-foreground font-mono">Contract awarded: 693KA9-18-D-00012</p>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-foreground/70 text-sm">
@@ -171,6 +121,46 @@ const Services = () => {
             </motion.div>
           </div>
         </motion.div>
+
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            We strive to incorporate the appropriate technical expertise, process improvement, and innovation to deliver quality solutions.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+              whileHover={{ y: -10 }}
+            >
+              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardHeader>
+                  <div className="mb-4">{service.icon}</div>
+                  <CardTitle>{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-foreground/70 text-sm">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
         
       </div>
     </section>
