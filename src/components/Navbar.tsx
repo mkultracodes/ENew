@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-150 ease-in-out ${
         isScrolled ? 'glass-nav py-2' : 'bg-background/60 backdrop-blur-md py-4'
       }`}
     >
@@ -37,13 +37,13 @@ const Navbar = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.25 }}
           >
             <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/8a0274ff-f0c5-4fa1-b1a5-5bf82fa0e51d.png" 
                 alt="Eyrie Networks Logo" 
-                className="h-8 md:h-10 w-auto"
+                className="h-8 sm:h-9 md:h-10 w-auto"
               />
             </Link>
           </motion.div>
@@ -53,7 +53,7 @@ const Navbar = () => {
             className="hidden md:flex space-x-8"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.25, delay: 0.05 }}
           >
             {navItems.map((item, index) => (
               <motion.div
@@ -62,11 +62,11 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+                transition={{ duration: 0.15, delay: 0.05 + index * 0.05 }}
               >
                 <Link 
                   to={item.href}
-                  className={`text-sm font-medium animated-link ${
+                  className={`text-base font-medium animated-link ${
                     isScrolled ? 'text-foreground' : 'text-foreground'
                   }`}
                 >
@@ -101,19 +101,19 @@ const Navbar = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.15 }}
         >
-          <div className="px-4 py-3 space-y-1">
+          <div className="px-4 py-4 space-y-2">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                transition={{ duration: 0.15, delay: index * 0.025 }}
               >
                 <Link
                   to={item.href}
-                  className="block py-2 text-base font-medium text-foreground"
+                  className="block py-3 text-lg font-medium text-foreground hover:text-primary transition-colors duration-150"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
