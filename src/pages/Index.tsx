@@ -11,7 +11,10 @@ import Footer from '../components/Footer';
 import ParticleCanvas from '../components/ui/particle-canvas';
 
 const Index = () => {
+  console.log('Index component rendering');
+  
   useEffect(() => {
+    console.log('Index component mounted');
     window.scrollTo(0, 0);
   }, []);
 
