@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Services from '../components/Services';
 import About from '../components/About';
 import Careers from '../components/Careers';
 import Contact from '../components/Contact';
@@ -27,7 +26,6 @@ const Index = () => {
         <Navbar />
         <main className="flex-1 w-full">
           <Hero />
-          <Services showContracts={false} />
           <About />
           <Careers />
           <Contact />

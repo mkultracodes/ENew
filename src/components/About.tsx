@@ -36,7 +36,7 @@ const About = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Who We Are</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We are a dynamic young company, made up of enthusiastic teams who offer effective and creative solutions to our valued clients.
+            We are a dynamic young company specializing in FAA contracting, made up of enthusiastic teams who offer effective and creative solutions to advance aviation technology and safety for our valued government clients.
           </p>
         </motion.div>
 
@@ -51,13 +51,13 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold">Our Story</h3>
             <p className="text-muted-foreground">
-              Eyrie Networks, LLC is a Minority Owned, Small Disadvantaged Business (SDB) that was founded in 2018.
+              Eyrie Networks, LLC is a Minority Owned, Small Disadvantaged Business (SDB) that was founded in 2018, specializing in Federal Aviation Administration (FAA) contracting and aviation technology solutions.
             </p>
             <p className="text-muted-foreground">
-              Our mission is to be the preferred company that provides the best proactive and innovative solutions. We strive for solutions that are affordable and highly available, maintainable, secure, and extensible.
+              Our mission is to be the preferred partner for the FAA, providing the best proactive and innovative solutions for aviation safety and technology advancement. We strive for solutions that are affordable and highly available, maintainable, secure, and extensible within the aviation ecosystem.
             </p>
             <p className="text-muted-foreground">
-              Our analysis approach transcends technology trends and incorporates optimal solutions for each customer's environment and challenges.
+              Our specialized approach to FAA contracting transcends technology trends and incorporates optimal solutions for the unique challenges of aviation infrastructure and air traffic management systems.
             </p>
           </motion.div>
 
