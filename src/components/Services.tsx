@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { AspectRatio } from './ui/aspect-ratio';
 
-const Services = () => {
+const Services = ({ showContracts = true }: { showContracts?: boolean }) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 }
@@ -63,59 +63,61 @@ const Services = () => {
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Current Contracts Section */}
-        <motion.div
-          className="mb-24"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeInUp}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Current Contracts</h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our ongoing partnerships with the FAA demonstrate our commitment to advancing aviation technology and safety.
-            </p>
-          </div>
+        {showContracts && (
+          <motion.div
+            className="mb-24"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Current Contracts</h3>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Our ongoing partnerships with the FAA demonstrate our commitment to advancing aviation technology and safety.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {contracts.map((contract, index) => (
-              <motion.div
-                key={contract.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={fadeInUp}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                whileHover={{ y: -10 }}
-              >
-                <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                  <div className="relative">
-                    <AspectRatio ratio={16 / 9}>
-                      <img
-                        src={contract.image}
-                        alt={contract.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    </AspectRatio>
-                  </div>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg leading-tight">{contract.title}</CardTitle>
-                    <p className="text-sm text-muted-foreground font-mono">
-                      Contract awarded: {contract.contractNumber}
-                    </p>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <CardDescription className="text-foreground/70 text-sm leading-relaxed">
-                      {contract.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {contracts.map((contract, index) => (
+                <motion.div
+                  key={contract.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                >
+                  <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div className="relative">
+                      <AspectRatio ratio={16 / 9}>
+                        <img
+                          src={contract.image}
+                          alt={contract.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      </AspectRatio>
+                    </div>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-lg leading-tight">{contract.title}</CardTitle>
+                      <p className="text-sm text-muted-foreground font-mono">
+                        Contract awarded: {contract.contractNumber}
+                      </p>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <CardDescription className="text-foreground/70 text-sm leading-relaxed">
+                        {contract.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         <motion.div
           className="text-center mb-16"

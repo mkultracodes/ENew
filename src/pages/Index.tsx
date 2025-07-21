@@ -27,7 +27,7 @@ const Index = () => {
         <Navbar />
         <main className="flex-1 w-full">
           <Hero />
-          <Services />
+          <Services showContracts={false} />
           <About />
           <Careers />
           <Contact />
