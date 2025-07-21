@@ -88,21 +88,6 @@ const Services = () => {
           ))}
         </div>
         
-        <motion.div
-          className="mt-16 text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeInUp}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <Link
-            to="/services"
-            className="px-6 py-3 bg-primary text-white rounded-md font-medium inline-flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-          >
-            View All Services <ArrowRight size={16} />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

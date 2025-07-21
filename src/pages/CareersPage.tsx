@@ -48,19 +48,6 @@ const CareersPage = () => {
             >
               Join our team and help shape the future of technology.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <Link 
-                to="/contact"
-                className="px-6 py-3 bg-primary text-white rounded-md font-medium inline-flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-              >
-                Contact Us
-                <ArrowRight size={16} />
-              </Link>
-            </motion.div>
           </div>
         </section>
         

@@ -27,7 +27,7 @@ const ServicesPage = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{ 
-              backgroundImage: 'url(https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2126&auto=format&fit=crop)', 
+              backgroundImage: 'url(https://images.unsplash.com/photo-1487887235947-a955ef187fcc?q=80&w=3498&auto=format&fit=crop)', 
               filter: 'brightness(0.5)'
             }}
           />
