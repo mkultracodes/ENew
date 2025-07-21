@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Server, Database, Code, LineChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
+import { AspectRatio } from './ui/aspect-ratio';
 
 const Services = () => {
   const fadeInUp = {
@@ -37,6 +38,27 @@ const Services = () => {
     }
   ];
 
+  const contracts = [
+    {
+      title: "Systems Engineering and Technical Innovative Solutions (SETIS)",
+      contractNumber: "693KA8-22-D-00020",
+      description: "The SETIS contract provides the FAA with advanced systems engineering and innovative technical solutions to modernize the National Airspace System (NAS). This includes support for research, system architecture, integration, test and evaluation, and emerging technologies. Our role under SETIS reflects our commitment to delivering forward-thinking, mission-critical engineering services to ensure the safety and efficiency of U.S. aviation.",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      title: "Program Support Services (PSS)",
+      contractNumber: "693KA921D00004",
+      description: "The PSS contract supports the FAA in executing complex program and project management initiatives across its lines of business. Services include strategic planning, financial analysis, acquisition support, and business process improvement. Through this contract, we contribute to the effective oversight and implementation of major FAA programs that advance national aviation priorities.",
+      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      title: "Air Traffic Engineering and Program Support II (ATEPS II)",
+      contractNumber: "693KA9-18-D-00012",
+      description: "ATEPS II delivers vital engineering and program management support for air traffic systems and infrastructure. This includes technical analysis, system design, requirements development, and implementation planning. Our work under ATEPS II directly supports the FAA's mission to enhance air traffic operations and ensure the continuous improvement of the air traffic management system.",
+      image: "https://images.unsplash.com/photo-1487887235947-a955ef187fcc?q=80&w=2070&auto=format&fit=crop"
+    }
+  ];
+
   return (
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,68 +79,41 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              whileHover={{ y: -10 }}
-            >
-              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-lg">Systems Engineering and Technical Innovative Solutions (SETIS)</CardTitle>
-                  <p className="text-sm text-muted-foreground font-mono">Contract awarded: 693KA8-22-D-00020</p>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-foreground/70 text-sm">
-                    The SETIS contract provides the FAA with advanced systems engineering and innovative technical solutions to modernize the National Airspace System (NAS). This includes support for research, system architecture, integration, test and evaluation, and emerging technologies. Our role under SETIS reflects our commitment to delivering forward-thinking, mission-critical engineering services to ensure the safety and efficiency of U.S. aviation.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              whileHover={{ y: -10 }}
-            >
-              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-lg">FAA Program Support Services (PSS)</CardTitle>
-                  <p className="text-sm text-muted-foreground font-mono">Contract awarded: 693KA921D00004</p>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-foreground/70 text-sm">
-                    The PSS contract supports the FAA in executing complex program and project management initiatives across its lines of business. Services include strategic planning, financial analysis, acquisition support, and business process improvement. Through this contract, we contribute to the effective oversight and implementation of major FAA programs that advance national aviation priorities.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              whileHover={{ y: -10 }}
-            >
-              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-lg">Air Traffic Engineering and Program Support II (ATEPS II)</CardTitle>
-                  <p className="text-sm text-muted-foreground font-mono">Contract awarded: 693KA9-18-D-00012</p>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-foreground/70 text-sm">
-                    ATEPS II delivers vital engineering and program management support for air traffic systems and infrastructure. This includes technical analysis, system design, requirements development, and implementation planning. Our work under ATEPS II directly supports the FAA's mission to enhance air traffic operations and ensure the continuous improvement of the air traffic management system.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
+            {contracts.map((contract, index) => (
+              <motion.div
+                key={contract.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeInUp}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                whileHover={{ y: -10 }}
+              >
+                <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="relative">
+                    <AspectRatio ratio={16 / 9}>
+                      <img
+                        src={contract.image}
+                        alt={contract.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </AspectRatio>
+                  </div>
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg leading-tight">{contract.title}</CardTitle>
+                    <p className="text-sm text-muted-foreground font-mono">
+                      Contract awarded: {contract.contractNumber}
+                    </p>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <CardDescription className="text-foreground/70 text-sm leading-relaxed">
+                      {contract.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
@@ -148,12 +143,12 @@ const Services = () => {
               whileHover={{ y: -10 }}
             >
               <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
-                <CardHeader>
+                <CardHeader className="pb-4">
                   <div className="mb-4">{service.icon}</div>
-                  <CardTitle>{service.title}</CardTitle>
+                  <CardTitle className="text-lg">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-foreground/70 text-sm">
+                <CardContent className="pt-0">
+                  <CardDescription className="text-foreground/70 text-sm leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardContent>
