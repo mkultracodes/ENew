@@ -11,12 +11,22 @@ const Careers = () => {
   const [selectedPosition, setSelectedPosition] = useState('');
 
   useEffect(() => {
-    // Load Tally script when dialog opens
+    // Load Tally script when dialog opens and clean up when it closes
     if (isApplicationOpen) {
+      // Remove any existing Tally script to ensure fresh load
+      const existingScript = document.querySelector('script[src*="tally.so"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+      
       const script = document.createElement('script');
-      script.innerHTML = `
-        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-      `;
+      script.src = "https://tally.so/widgets/embed.js";
+      script.onload = () => {
+        // Ensure Tally embeds are loaded after script loads
+        if (typeof (window as any).Tally !== 'undefined') {
+          (window as any).Tally.loadEmbeds();
+        }
+      };
       document.body.appendChild(script);
     }
   }, [isApplicationOpen]);
@@ -277,6 +287,7 @@ const Careers = () => {
           </DialogHeader>
           <div className="flex-1 overflow-y-auto">
             <iframe 
+              key={`tally-${selectedPosition}-${isApplicationOpen}`}
               data-tally-src="https://tally.so/embed/w29dJA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
               loading="lazy" 
               width="100%" 
