@@ -79,107 +79,224 @@ const OpenPositionsPage = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Current Openings</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Explore exciting opportunities to grow your career with us.
+                Explore exciting opportunities to grow your career with us. We have multiple positions available.
               </p>
             </motion.div>
 
-            {/* Job Listing */}
-            <motion.div
-              className="glass-card p-8 rounded-xl max-w-4xl mx-auto"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-4">Hardware & Test Engineer (Junior)</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <MapPin size={16} />
-                    <span>Atlantic City, NJ</span>
+            <div className="space-y-8">
+              {/* Job Listing 1 - Hardware & Test Engineer */}
+              <motion.div
+                className="glass-card p-8 rounded-xl"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-4">Hardware & Test Engineer (Junior)</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <MapPin size={16} />
+                      <span>Atlantic City, NJ</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Clock size={16} />
+                      <span>Full-time</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <GraduationCap size={16} />
+                      <span>0-5 years</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <DollarSign size={16} />
+                      <span>$75,000 – $92,000</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Clock size={16} />
-                    <span>Full-time</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <GraduationCap size={16} />
-                    <span>0-5 years</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <DollarSign size={16} />
-                    <span>$75,000 – $92,000</span>
+
+                  <div className="bg-muted/50 p-4 rounded-lg mb-6">
+                    <p className="text-sm font-medium mb-2">Requirements:</p>
+                    <p className="text-sm text-muted-foreground">B.A/B.S. in Systems/Software/Electronics Engineering</p>
                   </div>
                 </div>
 
-                <div className="bg-muted/50 p-4 rounded-lg mb-6">
-                  <p className="text-sm font-medium mb-2">Requirements:</p>
-                  <p className="text-sm text-muted-foreground">B.A/B.S. in Systems/Software/Electronics Engineering</p>
-                </div>
-              </div>
+                <div className="space-y-6 text-left">
+                  <div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We're looking for a hands-on Hardware/Test Engineer to help us design, build, and test reliable hardware systems. You'll be working closely with our hardware, firmware, and systems teams to make sure everything we build performs as expected under real-world conditions. If you enjoy solving practical engineering problems, digging into schematics, and fine-tuning test setups, this might be a good fit.
+                    </p>
+                  </div>
 
-              <div className="space-y-6 text-left">
-                <div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    We're looking for a hands-on Hardware/Test Engineer to help us design, build, and test reliable hardware systems. You'll be working closely with our hardware, firmware, and systems teams to make sure everything we build performs as expected under real-world conditions. If you enjoy solving practical engineering problems, digging into schematics, and fine-tuning test setups, this might be a good fit.
-                  </p>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Designing and building test setups for integrated enterprise systems</li>
+                      <li>• Running electrical, thermal, and functional tests to verify hardware performance and reliability</li>
+                      <li>• Writing test plans and documenting procedures clearly</li>
+                      <li>• Debugging and troubleshooting issues using tools</li>
+                      <li>• Working with the design team to provide feedback from testing and suggest improvements</li>
+                      <li>• Automating repetitive tests using Python or other scripting tools</li>
+                      <li>• Helping define and improve test coverage across hardware releases</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">What We're Looking For</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• A background in Electrical or Computer Engineering (or equivalent practical experience)</li>
+                      <li>• Solid understanding of hardware fundamentals — digital/analog signals, power, timing, etc.</li>
+                      <li>• Some experience with scripting or automation (Python is a plus)</li>
+                      <li>• Comfortable reading schematics and interpreting datasheets</li>
+                      <li>• Strong attention to detail and a systematic approach to testing and documentation</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">Nice to Have</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Prior experience with the FAA</li>
+                      <li>• Familiarity with embedded systems or firmware</li>
+                      <li>• Hands-on experience with environmental testing (vibration, thermal cycling, etc.)</li>
+                      <li>• Experience building or supporting production test stations</li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Designing and building test setups for integrated enterprise systems</li>
-                    <li>• Running electrical, thermal, and functional tests to verify hardware performance and reliability</li>
-                    <li>• Writing test plans and documenting procedures clearly</li>
-                    <li>• Debugging and troubleshooting issues using tools</li>
-                    <li>• Working with the design team to provide feedback from testing and suggest improvements</li>
-                    <li>• Automating repetitive tests using Python or other scripting tools</li>
-                    <li>• Helping define and improve test coverage across hardware releases</li>
-                  </ul>
+                <div className="mt-8 pt-6 border-t border-border">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link 
+                      to="/contact"
+                      className="px-6 py-3 bg-primary text-white rounded-md font-medium inline-flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
+                    >
+                      Apply Now
+                      <ArrowRight size={16} />
+                    </Link>
+                    <Link 
+                      to="/contact"
+                      className="px-6 py-3 border border-border rounded-md font-medium inline-flex items-center justify-center gap-2 hover:bg-muted/50 transition-all"
+                    >
+                      Ask Questions
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Job Listing 2 - Angular Developer */}
+              <motion.div
+                className="glass-card p-8 rounded-xl"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-4">Angular Front-End / Full Stack Developer</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <MapPin size={16} />
+                      <span>Hybrid - AC, NJ / DC</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Clock size={16} />
+                      <span>Full-time</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <GraduationCap size={16} />
+                      <span>All levels</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <DollarSign size={16} />
+                      <span>$65,000 – $170,000</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-muted/50 p-4 rounded-lg mb-6">
+                    <p className="text-sm font-medium mb-2">Requirements:</p>
+                    <p className="text-sm text-muted-foreground">B.S. in CS/Engineering required</p>
+                    <p className="text-sm text-muted-foreground mt-1">Tech Stack: Angular, Spring Boot, MongoDB, Python</p>
+                  </div>
                 </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold mb-3">What We're Looking For</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• A background in Electrical or Computer Engineering (or equivalent practical experience)</li>
-                    <li>• Solid understanding of hardware fundamentals — digital/analog signals, power, timing, etc.</li>
-                    <li>• Some experience with scripting or automation (Python is a plus)</li>
-                    <li>• Comfortable reading schematics and interpreting datasheets</li>
-                    <li>• Strong attention to detail and a systematic approach to testing and documentation</li>
-                  </ul>
+                <div className="space-y-6 text-left">
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">About Us</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We're currently looking for an Angular Front-End Developer who's also comfortable working across the stack when needed — especially with Python, Spring Boot, and MongoDB.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Building responsive, component-based user interfaces using Angular and TypeScript</li>
+                      <li>• Collaborating with the back-end team to integrate with APIs built in Spring Boot and Python</li>
+                      <li>• Writing clean, maintainable code and working with Git for version control</li>
+                      <li>• Communicating closely with product and design to bring new features to life</li>
+                      <li>• Working with MongoDB for data modeling and querying in a NoSQL environment</li>
+                      <li>• Helping debug, test, and optimize both front-end and back-end functionality</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">What We're Looking For</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• 2+ years' experience with Angular, along with TypeScript and CSS</li>
+                      <li>• Some hands-on experience with Python and Spring Boot for backend development</li>
+                      <li>• Familiarity with MongoDB, or at least comfortable working with NoSQL databases</li>
+                      <li>• Comfortable working independently and as part of a small, cross-functional team</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">Bonus Points If You Have</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Master's degree in computer science, Mathematics or related field</li>
+                      <li>• Built or maintained CI/CD pipelines</li>
+                      <li>• Familiarity with authentication (OAuth)</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">Why You Might Like It Here</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Flexible work hours and remote-friendly setup</li>
+                      <li>• You'll have the freedom to take ownership and contribute ideas</li>
+                      <li>• A chance to work across the stack and grow your skill set</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3">Salary Ranges</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Junior Software Engineer (0-5 yrs): $65,000 – $85,000 (location dependent)</li>
+                      <li>• Mid Software Engineer (5-10 yrs): $80,000 - $120,000 (location dependent) - Master's degree preferred</li>
+                      <li>• Senior (10+ yrs): $110,000 – $170,000 (location dependent) - Master's degree preferred</li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold mb-3">Nice to Have</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Prior experience with the FAA</li>
-                    <li>• Familiarity with embedded systems or firmware</li>
-                    <li>• Hands-on experience with environmental testing (vibration, thermal cycling, etc.)</li>
-                    <li>• Experience building or supporting production test stations</li>
-                  </ul>
+                <div className="mt-8 pt-6 border-t border-border">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link 
+                      to="/contact"
+                      className="px-6 py-3 bg-primary text-white rounded-md font-medium inline-flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
+                    >
+                      Apply Now
+                      <ArrowRight size={16} />
+                    </Link>
+                    <Link 
+                      to="/contact"
+                      className="px-6 py-3 border border-border rounded-md font-medium inline-flex items-center justify-center gap-2 hover:bg-muted/50 transition-all"
+                    >
+                      Ask Questions
+                    </Link>
+                  </div>
                 </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-border">
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link 
-                    to="/contact"
-                    className="px-6 py-3 bg-primary text-white rounded-md font-medium inline-flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-                  >
-                    Apply Now
-                    <ArrowRight size={16} />
-                  </Link>
-                  <Link 
-                    to="/contact"
-                    className="px-6 py-3 border border-border rounded-md font-medium inline-flex items-center justify-center gap-2 hover:bg-muted/50 transition-all"
-                  >
-                    Ask Questions
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
       </main>
