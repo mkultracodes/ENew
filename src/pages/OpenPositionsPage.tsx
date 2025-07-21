@@ -1,22 +1,17 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Clock, GraduationCap, DollarSign, FileText, X } from 'lucide-react';
+import { ArrowRight, MapPin, Clock, GraduationCap, FileText } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ParticleCanvas from '../components/ui/particle-canvas';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Button } from '../components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
-import { Input } from '../components/ui/input';
-import { Label } from '../components/ui/label';
-import { useToast } from '@/hooks/use-toast';
 
 const OpenPositionsPage = () => {
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,39 +27,16 @@ const OpenPositionsPage = () => {
     setIsApplicationOpen(true);
   };
 
-  const handleSubmitApplication = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.target as HTMLFormElement);
-    formData.append('position', selectedPosition);
-
-    try {
-      const response = await fetch('https://getform.io/f/your-getform-endpoint', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Application Submitted",
-          description: "Thank you for applying! We'll review your application and get back to you soon.",
-        });
-        setIsApplicationOpen(false);
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error('Failed to submit application');
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to submit application. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+  useEffect(() => {
+    // Load Tally script when dialog opens
+    if (isApplicationOpen) {
+      const script = document.createElement('script');
+      script.innerHTML = `
+        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+      `;
+      document.body.appendChild(script);
     }
-  };
+  }, [isApplicationOpen]);
 
   return (
     <motion.div
@@ -351,7 +323,7 @@ const OpenPositionsPage = () => {
 
       {/* Application Dialog */}
       <Dialog open={isApplicationOpen} onOpenChange={setIsApplicationOpen}>
-        <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-hidden">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <FileText className="h-5 w-5" />
@@ -361,55 +333,19 @@ const OpenPositionsPage = () => {
               {selectedPosition}
             </p>
           </DialogHeader>
-          <form onSubmit={handleSubmitApplication} className="space-y-4 mt-4">
-            <div className="space-y-2">
-              <Label htmlFor="name">Full Name *</Label>
-              <Input 
-                id="name" 
-                name="name" 
-                type="text" 
-                required 
-                placeholder="Enter your full name"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email Address *</Label>
-              <Input 
-                id="email" 
-                name="email" 
-                type="email" 
-                required 
-                placeholder="Enter your email address"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="resume">Resume/CV *</Label>
-              <Input 
-                id="resume" 
-                name="resume" 
-                type="file" 
-                required 
-                accept=".pdf,.doc,.docx"
-                className="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
-              />
-              <p className="text-xs text-muted-foreground">
-                Please upload your resume in PDF, DOC, or DOCX format
-              </p>
-            </div>
-            <div className="flex justify-end gap-3 pt-4">
-              <Button 
-                type="button" 
-                variant="outline" 
-                onClick={() => setIsApplicationOpen(false)}
-                disabled={isSubmitting}
-              >
-                Cancel
-              </Button>
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Application"}
-              </Button>
-            </div>
-          </form>
+          <div className="mt-4">
+            <iframe 
+              data-tally-src="https://tally.so/embed/w29dJA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+              loading="lazy" 
+              width="100%" 
+              height="570" 
+              frameBorder="0" 
+              marginHeight={0} 
+              marginWidth={0} 
+              title="Application"
+              className="rounded-lg"
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </motion.div>
