@@ -265,8 +265,8 @@ const Careers = () => {
 
       {/* Application Dialog */}
       <Dialog open={isApplicationOpen} onOpenChange={setIsApplicationOpen}>
-        <DialogContent className="w-[95vw] max-w-[600px] max-h-[95vh] overflow-hidden p-4 sm:p-6">
-          <DialogHeader>
+        <DialogContent className="w-[95vw] max-w-[600px] h-[95vh] overflow-hidden p-0 flex flex-col">
+          <DialogHeader className="p-4 sm:p-6 pb-0 flex-shrink-0">
             <DialogTitle className="flex items-center gap-2 text-lg sm:text-xl">
               <FileText className="h-5 w-5" />
               Apply for Position
@@ -275,18 +275,18 @@ const Careers = () => {
               {selectedPosition}
             </p>
           </DialogHeader>
-          <div className="mt-4 -mx-4 sm:-mx-6">
+          <div className="flex-1 overflow-y-auto">
             <iframe 
               data-tally-src="https://tally.so/embed/w29dJA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
               loading="lazy" 
               width="100%" 
-              height="500" 
-              style={{ minHeight: '400px', height: 'calc(95vh - 200px)', maxHeight: '600px' }}
+              height="100%" 
+              style={{ minHeight: '600px' }}
               frameBorder="0" 
               marginHeight={0} 
               marginWidth={0} 
               title="Application"
-              className="rounded-none sm:rounded-lg"
+              className="w-full"
             />
           </div>
         </DialogContent>
