@@ -43,7 +43,7 @@ const Careers = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link 
-              to="/careers"
+              to="/open-positions"
               className="px-6 py-3 bg-primary text-white rounded-md font-medium inline-flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
             >
               View Open Positions
