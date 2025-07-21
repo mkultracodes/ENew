@@ -87,6 +87,90 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Current Contracts Section */}
+        <motion.div
+          className="mt-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Current Contracts</h3>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our ongoing partnerships with the FAA demonstrate our commitment to advancing aviation technology and safety.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -10 }}
+            >
+              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-lg">SETIS</CardTitle>
+                  <p className="text-sm text-muted-foreground font-mono">693KA8-22-D-00020</p>
+                  <p className="text-sm text-muted-foreground">Systems Engineering and Technical Innovative Solutions</p>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-foreground/70 text-sm">
+                    The SETIS contract provides the FAA with advanced systems engineering and innovative technical solutions to modernize the National Airspace System (NAS). This includes support for research, system architecture, integration, test and evaluation, and emerging technologies. Our role under SETIS reflects our commitment to delivering forward-thinking, mission-critical engineering services to ensure the safety and efficiency of U.S. aviation.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -10 }}
+            >
+              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-lg">FAA Program Support Services (PSS)</CardTitle>
+                  <p className="text-sm text-muted-foreground font-mono">693KA921D00004</p>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-foreground/70 text-sm">
+                    The PSS contract supports the FAA in executing complex program and project management initiatives across its lines of business. Services include strategic planning, financial analysis, acquisition support, and business process improvement. Through this contract, we contribute to the effective oversight and implementation of major FAA programs that advance national aviation priorities.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -10 }}
+            >
+              <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-lg">ATEPS II</CardTitle>
+                  <p className="text-sm text-muted-foreground font-mono">693KA9-18-D-00012</p>
+                  <p className="text-sm text-muted-foreground">Air Traffic Engineering and Program Support II</p>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-foreground/70 text-sm">
+                    ATEPS II delivers vital engineering and program management support for air traffic systems and infrastructure. This includes technical analysis, system design, requirements development, and implementation planning. Our work under ATEPS II directly supports the FAA's mission to enhance air traffic operations and ensure the continuous improvement of the air traffic management system.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </motion.div>
         
       </div>
     </section>
