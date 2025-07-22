@@ -122,7 +122,7 @@ const Hero = () => {
             animate="visible"
             variants={fadeInUp}
           >
-            We Build the Systems That Move You Forward
+            We Build the Systems<br />That Move You Forward
           </motion.h1>
           
           <motion.p 

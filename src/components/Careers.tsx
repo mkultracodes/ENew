@@ -91,7 +91,7 @@ const Careers = () => {
                     </div>
                     <div className="mt-4 md:mt-0 text-right">
                       <div className="text-lg font-semibold text-blue-600">$65k - $170k</div>
-                      <div className="text-sm text-muted-foreground">Multiple levels underneath</div>
+                      <div className="text-sm text-muted-foreground">Multiple levels</div>
                     </div>
                   </div>
                 </AccordionTrigger>
