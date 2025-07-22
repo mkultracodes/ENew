@@ -84,7 +84,7 @@ const Services = ({ showContracts = true }: { showContracts?: boolean }) => {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
                   variants={fadeInUp}
-                  transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                  transition={{ duration: 0.167, delay: 0.033 + index * 0.033 }}
                   whileHover={{ y: -10 }}
                 >
                   <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
@@ -99,7 +99,13 @@ const Services = ({ showContracts = true }: { showContracts?: boolean }) => {
                       </AspectRatio>
                     </div>
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-lg leading-tight">{contract.title}</CardTitle>
+                      <CardTitle className="text-lg leading-tight">
+                        {contract.title === "Program Support Services (PSS)" ? (
+                          <>Program Support Services (PSS)<br /><br /></>
+                        ) : (
+                          contract.title
+                        )}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent className="pt-0">
                       <CardDescription className="text-foreground/70 text-sm leading-relaxed">

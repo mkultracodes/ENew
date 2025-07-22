@@ -75,16 +75,8 @@ const AboutPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              About Eyrie Networks
-            </motion.h1>
-            <motion.p 
-              className="text-xl text-white/90 max-w-3xl mx-auto mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
               Delivering cutting-edge IT solutions for government and commercial clients
-            </motion.p>
+            </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -161,7 +153,7 @@ const AboutPage = () => {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
                   variants={fadeInUp}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                  transition={{ duration: 0.167, delay: 0.167 + index * 0.033 }}
                   whileHover={{ y: -10 }}
                 >
                   <Card className="h-full glass-card border-none shadow-xl hover:shadow-2xl transition-all duration-300">

@@ -27,7 +27,7 @@ const ServicesPage = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{ 
-              backgroundImage: 'url(https://images.unsplash.com/photo-1487887235947-a955ef187fcc?q=80&w=3498&auto=format&fit=crop)', 
+              backgroundImage: 'url(/src/assets/air-traffic-control.jpg)', 
               filter: 'brightness(0.5)'
             }}
           />
@@ -64,6 +64,8 @@ const ServicesPage = () => {
           </div>
         </section>
         
+        <Services />
+        
         {/* NAICS Codes Section */}
         <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +87,7 @@ const ServicesPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
+                  transition={{ duration: 0.167, delay: 0.033 }}
                 >
                   <div className="text-2xl font-bold text-primary mb-2">541330</div>
                   <div className="font-medium">Engineering Services</div>
@@ -96,7 +98,7 @@ const ServicesPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
+                  transition={{ duration: 0.167, delay: 0.067 }}
                 >
                   <div className="text-2xl font-bold text-primary mb-2">488190</div>
                   <div className="font-medium">Other Support Activities For Air Transportation</div>
@@ -107,7 +109,7 @@ const ServicesPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
+                  transition={{ duration: 0.167, delay: 0.1 }}
                 >
                   <div className="text-2xl font-bold text-primary mb-2">541512</div>
                   <div className="font-medium">Computer Systems Design Services</div>
@@ -116,8 +118,6 @@ const ServicesPage = () => {
             </motion.div>
           </div>
         </section>
-        
-        <Services />
       </main>
       <Footer />
     </motion.div>

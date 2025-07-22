@@ -73,59 +73,14 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-2xl mx-auto">
           <motion.div
             className="glass-card p-8 rounded-xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
-            <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-full">
-                  <Phone className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Phone</h4>
-                  <p className="text-muted-foreground">(202) 525-6460</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-full">
-                  <MapPin className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Office</h4>
-                  <p className="text-muted-foreground">Washington, DC</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <h3 className="text-2xl font-bold mb-6">Business Hours</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span>9:00 AM - 5:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday - Sunday:</span>
-                  <span>Closed</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="glass-card p-8 rounded-xl"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.4, delay: 0.15 }}
+            transition={{ duration: 0.133, delay: 0.05 }}
           >
             <h3 className="text-2xl font-bold mb-6">Write A Message</h3>
             <form 
