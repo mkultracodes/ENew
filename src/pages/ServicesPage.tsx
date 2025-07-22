@@ -78,9 +78,6 @@ const ServicesPage = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-2xl md:text-3xl font-bold mb-6">NAICS Codes</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-                Our services align with the following North American Industry Classification System codes
-              </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <motion.div
@@ -101,8 +98,8 @@ const ServicesPage = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.167, delay: 0.067 }}
                 >
-                  <div className="text-2xl font-bold text-primary mb-2">488190</div>
-                  <div className="font-medium">Other Support Activities For Air Transportation</div>
+                  <div className="text-2xl font-bold text-primary mb-2">541512</div>
+                  <div className="font-medium">Computer Systems Design Services</div>
                 </motion.div>
                 
                 <motion.div
@@ -112,8 +109,8 @@ const ServicesPage = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.167, delay: 0.1 }}
                 >
-                  <div className="text-2xl font-bold text-primary mb-2">541512</div>
-                  <div className="font-medium">Computer Systems Design Services</div>
+                  <div className="text-2xl font-bold text-primary mb-2">488190</div>
+                  <div className="font-medium">Other Support Activities For Air Transportation</div>
                 </motion.div>
               </div>
             </motion.div>

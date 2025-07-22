@@ -109,8 +109,8 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="glass-card p-6 rounded-xl">
               <h4 className="text-xl font-bold mb-4">Expertise</h4>
-              <p className="text-muted-foreground">
-                We strive to incorporate the appropriate technical expertise, process improvement, and innovation to deliver the quality solutions that our customers have come to expect from us.
+              <p className="text-muted-foreground text-lg">
+                We strive to incorporate the appropriate technical expertise, process improvement, and innovation to deliver quality solutions.
               </p>
             </div>
             <div className="glass-card p-6 rounded-xl">

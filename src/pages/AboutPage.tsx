@@ -21,7 +21,7 @@ const AboutPage = () => {
     "IT Systems Architecture & Engineering",
     "Design and Deployment of Modern IT Infrastructure", 
     "Legacy System Modernization",
-    "Systems Integration & Interoperability",
+    "Artificial Intelligence & Machine Learning Solutions",
     "Cloud Migration & Hybrid IT Solutions",
     "Network Design and Optimization"
   ];
@@ -106,7 +106,7 @@ const AboutPage = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Core Competencies</h2>
               <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-12">
-                Eyrie Networks delivers high-quality IT services with a focus on the architecture, design, and integration of modern and legacy systems. We help government and commercial clients implement scalable, secure, and future-ready technology solutions.
+                Eyrie Networks delivers high-quality services with a focus on the architecture, design, and integration of modern and legacy systems. We help government and commercial clients implement scalable, secure, and future-ready technology solutions.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

@@ -90,8 +90,8 @@ const Careers = () => {
                       </div>
                     </div>
                     <div className="mt-4 md:mt-0 text-right">
-                      <div className="text-lg font-semibold text-primary">Multiple Levels</div>
-                      <div className="text-sm text-muted-foreground">$65k - $170k</div>
+                      <div className="text-lg font-semibold text-blue-600">$65k - $170k</div>
+                      <div className="text-sm text-muted-foreground">Multiple levels underneath</div>
                     </div>
                   </div>
                 </AccordionTrigger>
@@ -205,7 +205,6 @@ const Careers = () => {
                     </div>
                     <div className="mt-4 md:mt-0 text-right">
                       <div className="text-lg font-semibold text-primary">$75,000 – $92,000</div>
-                      <div className="text-sm text-muted-foreground">per year</div>
                     </div>
                   </div>
                 </AccordionTrigger>
