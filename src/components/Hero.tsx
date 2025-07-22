@@ -122,7 +122,7 @@ const Hero = () => {
             animate="visible"
             variants={fadeInUp}
           >
-            Our Business Is Helping You Grow Yours
+            We Build the Systems That Move You Forward
           </motion.h1>
           
           <motion.p 
@@ -132,7 +132,7 @@ const Hero = () => {
             variants={fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            Our mission at Eyrie Networks is to provide customers with high quality IT Services that include architecture, design, and integration of new or modernization of legacy IT solutions.
+            Eyrie Networks delivers high-quality IT services with a focus on the architecture, design, and integration of modern and legacy systems. We help government and commercial clients implement scalable, secure, and future-ready technology solutions.
           </motion.p>
           
           <motion.div

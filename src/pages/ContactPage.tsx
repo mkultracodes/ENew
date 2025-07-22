@@ -65,40 +65,6 @@ const ContactPage = () => {
         </section>
         
         <Contact />
-        
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl font-bold mb-6">Our Location</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Based in Washington, DC, we serve clients nationwide.
-              </p>
-            </motion.div>
-            
-            <motion.div
-              className="rounded-xl overflow-hidden shadow-2xl"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <iframe 
-                title="Eyrie Networks Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99370.15049311664!2d-77.0777!3d38.9072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c6de5af6e45b%3A0xc2524522d4885d2a!2sWashington%2C%20DC!5e0!3m2!1sen!2sus!4v1615896784179!5m2!1sen!2sus" 
-                width="100%" 
-                height="450" 
-                loading="lazy"
-                className="border-0"
-              ></iframe>
-            </motion.div>
-          </div>
-        </section>
       </main>
       <Footer />
     </motion.div>

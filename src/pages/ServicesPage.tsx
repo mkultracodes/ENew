@@ -64,6 +64,59 @@ const ServicesPage = () => {
           </div>
         </section>
         
+        {/* NAICS Codes Section */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">NAICS Codes</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+                Our services align with the following North American Industry Classification System codes
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <motion.div
+                  className="p-6 rounded-lg bg-card border shadow-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <div className="text-2xl font-bold text-primary mb-2">541330</div>
+                  <div className="font-medium">Engineering Services</div>
+                </motion.div>
+                
+                <motion.div
+                  className="p-6 rounded-lg bg-card border shadow-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <div className="text-2xl font-bold text-primary mb-2">488190</div>
+                  <div className="font-medium">Other Support Activities For Air Transportation</div>
+                </motion.div>
+                
+                <motion.div
+                  className="p-6 rounded-lg bg-card border shadow-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <div className="text-2xl font-bold text-primary mb-2">541512</div>
+                  <div className="font-medium">Computer Systems Design Services</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+        
         <Services />
       </main>
       <Footer />
