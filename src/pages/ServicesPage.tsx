@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Services from '../components/Services';
 import ParticleCanvas from '../components/ui/particle-canvas';
+import airplaneBanner from '../assets/airplane-banner.jpg';
 
 const ServicesPage = () => {
   useEffect(() => {
@@ -27,7 +28,7 @@ const ServicesPage = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{ 
-              backgroundImage: 'url(/src/assets/airplane-banner.jpg)', 
+              backgroundImage: `url(${airplaneBanner})`, 
               filter: 'brightness(0.5)'
             }}
           />
