@@ -132,8 +132,7 @@ const Hero = () => {
             variants={fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            Eyrie Networks delivers high-quality services with a focus on the architecture, design, and integration of modern and legacy systems. We help government and commercial clients implement scalable, secure, and future-ready technology solutions<br />
-            That move you forward.
+            Eyrie Networks delivers high-quality services with a focus on the architecture, design, and integration of modern and legacy systems. We help government and commercial clients implement scalable, secure, and future-ready technology solutions.
           </motion.p>
           
           <motion.div
