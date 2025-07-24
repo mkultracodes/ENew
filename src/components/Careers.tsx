@@ -77,7 +77,7 @@ const Careers = () => {
                       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <MapPin size={14} />
-                          <span>Hybrid - AC, NJ / DC</span>
+                          <span>Hybrid - Atlantic City, NJ / DC</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock size={14} />
