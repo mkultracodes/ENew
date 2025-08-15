@@ -90,7 +90,7 @@ const Careers = () => {
                       </div>
                     </div>
                     <div className="mt-4 md:mt-0 text-right">
-                      <div className="text-lg font-semibold text-blue-600">$65k - $170k</div>
+                      <div className="text-lg font-semibold text-blue-600">$65,000 - $170,000</div>
                       <div className="text-sm text-muted-foreground">Multiple levels</div>
                     </div>
                   </div>
