@@ -213,7 +213,7 @@ const Careers = () => {
                   <div className="space-y-6">
                     <div className="bg-muted/50 p-4 rounded-lg">
                       <p className="text-sm font-medium mb-2">Requirements:</p>
-                      <p className="text-sm text-muted-foreground"><strong>B.A/B.S. in Systems/Software/Electronics Engineering</strong></p>
+                      <p className="text-sm text-muted-foreground">B.A/B.S. in Systems/Software/Electronics Engineering required</p>
                       <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
                     </div>
 
