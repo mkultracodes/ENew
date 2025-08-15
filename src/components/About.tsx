@@ -15,7 +15,7 @@ const About = () => {
     },
     {
       title: "Staff",
-      description: "Recruit and retain the best talent. Quickly assess customer needs and match them with the proper team to ensure max success"
+      description: "Recruit and retain the best talent. Quickly assess customer needs and match them with the proper team to ensure maximum success"
     },
     {
       title: "Determination",
