@@ -77,7 +77,7 @@ const Careers = () => {
                       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <MapPin size={14} />
-                          <span>Hybrid - Atlantic City, NJ / DC</span>
+                          <span>Hybrid - Atlantic City, NJ</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock size={14} />
@@ -154,10 +154,6 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">Salary by Experience Level</h4>
                       <div className="space-y-3">
-                        <div className="flex flex-col sm:flex-row sm:justify-between p-3 bg-muted/30 rounded-lg">
-                          <span className="font-medium">Junior (0-5 years)</span>
-                          <span className="text-primary font-semibold">$65,000 – $85,000</span>
-                        </div>
                         <div className="flex flex-col sm:flex-row sm:justify-between p-3 bg-muted/30 rounded-lg">
                           <span className="font-medium">Mid-Level (5-10 years) <span className="text-sm text-muted-foreground">Master's preferred</span></span>
                           <span className="text-primary font-semibold">$80,000 – $120,000</span>
