@@ -136,7 +136,7 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">Bonus Points If You Have</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Master's degree in computer science, Mathematics or related field</li>
+                        <li>• Master's degree in computer science, mathematics, engineering or related field</li>
                         <li>• Built or maintained CI/CD pipelines</li>
                         <li>• Familiarity with authentication (OAuth)</li>
                       </ul>
