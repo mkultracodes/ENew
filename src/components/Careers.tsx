@@ -126,7 +126,7 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What We're Looking For</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• 10+ years' experience (B.S. degree) or 2+ years' experience (Master's degree)</li>
+                        <li>• Experience with Angular, TypeScript, and CSS: 10+ years (B.S. degree) or 2+ years (Master's degree)</li>
                         <li>• Some hands-on experience with Python and Spring Boot for backend development</li>
                         <li>• Familiarity with MongoDB, or at least comfortable working with NoSQL databases</li>
                         <li>• Comfortable working independently and as part of a small, cross-functional team</li>
