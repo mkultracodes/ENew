@@ -101,7 +101,7 @@ const Careers = () => {
                       <p className="text-sm font-medium mb-2">Requirements & Tech Stack:</p>
                       <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
                       <p className="text-sm text-muted-foreground">B.S. in CS/Engineering required</p>
-                      <p className="text-sm text-muted-foreground mt-2">Tech Stack: Angular, Spring Boot, MongoDB, Python</p>
+                      <p className="text-sm text-muted-foreground mt-2">Tech Stack: Angular, Spring Boot, MongoDB, Python, Java</p>
                     </div>
 
                     <div>
