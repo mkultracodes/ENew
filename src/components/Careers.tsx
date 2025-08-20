@@ -145,7 +145,6 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">Why You Might Like It Here</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Flexible work hours and remote-friendly setup</li>
                         <li>• You'll have the freedom to take ownership and contribute ideas</li>
                         <li>• A chance to work across the stack and grow your skill set</li>
                       </ul>
