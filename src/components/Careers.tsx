@@ -101,20 +101,20 @@ const Careers = () => {
                       <p className="text-sm font-medium mb-2">Requirements & Tech Stack:</p>
                       <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
                       <p className="text-sm text-muted-foreground">B.S. in CS/Engineering required</p>
-                      <p className="text-sm text-muted-foreground mt-2">Tech Stack: Angular, Spring Boot, MongoDB, Python, Java</p>
+                      <p className="text-sm text-muted-foreground mt-2">Tech Stack: Angular, Java, Spring Boot, MongoDB, Python</p>
                     </div>
 
                     <div>
                       <h4 className="text-lg font-semibold mb-3">About Us</h4>
                       <p className="text-muted-foreground leading-relaxed">
-                        We're currently looking for an Angular Front-End Developer who's also comfortable working across the stack when needed — especially with Python, Spring Boot, and MongoDB.
+                        We're currently looking for an Angular Front-End Developer who's also comfortable working across the stack when needed — especially with Java, Python, Spring Boot, and MongoDB.
                       </p>
                     </div>
 
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Building responsive, component-based user interfaces using Angular and TypeScript</li>
+                        <li>• Building responsive, component-based user interfaces using Angular, TypeScript, and Java</li>
                         <li>• Collaborating with the back-end team to integrate with APIs built in Spring Boot and Python</li>
                         <li>• Writing clean, maintainable code and working with Git for version control</li>
                         <li>• Communicating closely with product and design to bring new features to life</li>
@@ -126,7 +126,7 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What We're Looking For</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Experience with Angular, TypeScript, and CSS: 10+ years (B.S. degree) or 2+ years (Master's degree)</li>
+                        <li>• Experience with Angular, TypeScript, and Java: 10+ years (B.S. degree) or 2+ years (Master's degree)</li>
                         <li>• Some hands-on experience with Python and Spring Boot for backend development</li>
                         <li>• Familiarity with MongoDB, or at least comfortable working with NoSQL databases</li>
                         <li>• Comfortable working independently and as part of a small, cross-functional team</li>
