@@ -91,7 +91,7 @@ const Careers = () => {
                     </div>
                     <div className="mt-4 md:mt-0 text-right">
                       <div className="text-lg font-semibold text-blue-600">$65,000 - $170,000</div>
-                      <div className="text-sm text-muted-foreground">All levels</div>
+                      <div className="text-sm text-muted-foreground">Multiple levels</div>
                     </div>
                   </div>
                 </AccordionTrigger>
@@ -166,6 +166,7 @@ const Careers = () => {
                           <span className="text-primary font-semibold">$110,000 – $170,000</span>
                         </div>
                       </div>
+                      <p className="text-sm text-muted-foreground mt-3">*Salary ranges are location dependent</p>
                     </div>
 
                     <div className="pt-6 border-t border-border">
