@@ -114,8 +114,8 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Building responsive, component-based user interfaces using Angular, TypeScript, and Java</li>
-                        <li>• Collaborating with the back-end team to integrate with APIs built in Spring Boot and Python</li>
+                        <li>• Building responsive, component-based user interfaces using Angular and TypeScript</li>
+                        <li>• Collaborating with the back-end team to integrate with APIs built in Java, Spring Boot, and Python</li>
                         <li>• Writing clean, maintainable code and working with Git for version control</li>
                         <li>• Communicating closely with product and design to bring new features to life</li>
                         <li>• Working with MongoDB for data modeling and querying in a NoSQL environment</li>
