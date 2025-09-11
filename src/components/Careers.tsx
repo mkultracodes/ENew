@@ -159,7 +159,7 @@ const Careers = () => {
                         </div>
                         <div className="flex flex-col sm:flex-row sm:justify-between p-3 bg-muted/30 rounded-lg">
                           <span className="font-medium">Mid-Level (5-10 years)</span>
-                          <span className="text-primary font-semibold">$80,000 – $120,000</span>
+                          <span className="text-primary font-semibold">$80,000 – $110,000</span>
                         </div>
                         <div className="flex flex-col sm:flex-row sm:justify-between p-3 bg-muted/30 rounded-lg">
                           <span className="font-medium">Senior (10+ years)</span>
