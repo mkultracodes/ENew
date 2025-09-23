@@ -134,7 +134,6 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What We're Looking For</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Experience with full stack development: 10+ years (B.S. degree) or 2+ years (Master's degree)</li>
                         <li>• Proficiency with one or more database technologies (MariaDB, MySQL, MS SQL Server, Oracle, PostGres, MongoDB)</li>
                         <li>• Experience with application layer technologies (ColdFusion, PHP, Java, Python, or NodeJS)</li>
                         <li>• Hands-on experience with UI frameworks (ExtJS, Angular, React) following MVVM or MVC patterns</li>
