@@ -98,10 +98,11 @@ const Careers = () => {
                 <AccordionContent className="px-6 pb-6">
                   <div className="space-y-6">
                     <div className="bg-muted/50 p-4 rounded-lg">
+                      <p className="text-sm font-medium mb-3">Requirements:</p>
                       <div className="space-y-1">
-                        <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
-                        <p className="text-sm text-muted-foreground">B.S. in CS/Engineering required</p>
-                        <p className="text-sm text-muted-foreground">Linux experience required</p>
+                        <p className="text-sm text-muted-foreground">U.S. citizenship</p>
+                        <p className="text-sm text-muted-foreground">B.S. in CS/Engineering</p>
+                        <p className="text-sm text-muted-foreground">Linux experience</p>
                       </div>
                       <div className="mt-4 space-y-2">
                         <p className="text-sm font-medium">Tech Stack:</p>
@@ -222,8 +223,9 @@ const Careers = () => {
                 <AccordionContent className="px-6 pb-6">
                   <div className="space-y-6">
                     <div className="bg-muted/50 p-4 rounded-lg">
-                      <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
-                      <p className="text-sm text-muted-foreground">B.A/B.S. in Systems/Software/Electronics Engineering required</p>
+                      <p className="text-sm font-medium mb-2">Requirements:</p>
+                      <p className="text-sm text-muted-foreground">U.S. citizenship</p>
+                      <p className="text-sm text-muted-foreground">B.A/B.S. in Systems/Software/Electronics Engineering</p>
                     </div>
 
                     <div>
