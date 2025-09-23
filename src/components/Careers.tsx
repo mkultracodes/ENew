@@ -73,11 +73,11 @@ const Careers = () => {
                 <AccordionTrigger className="px-6 py-6 hover:no-underline">
                   <div className="flex flex-col md:flex-row md:items-center justify-between w-full text-left">
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold mb-2">Angular Front-End / Full Stack Developer</h3>
+                      <h3 className="text-xl md:text-2xl font-bold mb-2">Full Stack Developer</h3>
                       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <MapPin size={14} />
-                          <span>Hybrid - Atlantic City, NJ / Washington D.C.</span>
+                          <span>Atlantic City, NJ (2-3 days/week)</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock size={14} />
@@ -101,35 +101,41 @@ const Careers = () => {
                       <p className="text-sm font-medium mb-2">Requirements & Tech Stack:</p>
                       <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
                       <p className="text-sm text-muted-foreground">B.S. in CS/Engineering required</p>
-                      <p className="text-sm text-muted-foreground mt-2">Tech Stack: Angular, Java, Spring Boot, MongoDB, Python</p>
+                      <p className="text-sm text-muted-foreground mt-2">Database: MariaDB, MySQL, MS SQL Server, Oracle, PostGres, MongoDB</p>
+                      <p className="text-sm text-muted-foreground">Application Layer: ColdFusion, PHP, Java, Python, NodeJS</p>
+                      <p className="text-sm text-muted-foreground">UI/UX: ExtJS, Angular, React (MVVM/MVC frameworks)</p>
+                      <p className="text-sm text-muted-foreground">Linux experience required</p>
                     </div>
 
                     <div>
                       <h4 className="text-lg font-semibold mb-3">About Us</h4>
                       <p className="text-muted-foreground leading-relaxed">
-                        We're currently looking for an Angular Front-End Developer who's also comfortable working across the stack when needed — especially with Java, Python, Spring Boot, and MongoDB.
+                        We're looking for a Full Stack Developer capable of producing clean, readable, functional code at the database, application server and client layers. You should have the ability to work with one or more technologies from each layer of our tech stack.
                       </p>
                     </div>
 
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Building responsive, component-based user interfaces using Angular and TypeScript</li>
-                        <li>• Collaborating with the back-end team to integrate with APIs built in Java, Spring Boot, and Python</li>
-                        <li>• Writing clean, maintainable code and working with Git for version control</li>
-                        <li>• Communicating closely with product and design to bring new features to life</li>
-                        <li>• Working with MongoDB for data modeling and querying in a NoSQL environment</li>
-                        <li>• Helping debug, test, and optimize both front-end and back-end functionality</li>
+                        <li>• Developing full stack web applications from database to client layer</li>
+                        <li>• Working with databases like MariaDB, MySQL, MS SQL Server, Oracle, PostGres, or MongoDB</li>
+                        <li>• Building application server logic using ColdFusion, PHP, Java, Python, or NodeJS</li>
+                        <li>• Creating responsive user interfaces with ExtJS, Angular, React or similar MVVM/MVC frameworks</li>
+                        <li>• Working in Linux environments and managing deployments</li>
+                        <li>• Writing clean, maintainable code and working with version control systems</li>
+                        <li>• Collaborating with team members to deliver functional solutions</li>
                       </ul>
                     </div>
 
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What We're Looking For</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Experience with Angular, TypeScript, and Java: 10+ years (B.S. degree) or 2+ years (Master's degree)</li>
-                        <li>• Some hands-on experience with Python and Spring Boot for backend development</li>
-                        <li>• Familiarity with MongoDB, or at least comfortable working with NoSQL databases</li>
-                        <li>• Comfortable working independently and as part of a small, cross-functional team</li>
+                        <li>• Experience with full stack development: 10+ years (B.S. degree) or 2+ years (Master's degree)</li>
+                        <li>• Proficiency with one or more database technologies (MariaDB, MySQL, MS SQL Server, Oracle, PostGres, MongoDB)</li>
+                        <li>• Experience with application layer technologies (ColdFusion, PHP, Java, Python, or NodeJS)</li>
+                        <li>• Hands-on experience with UI frameworks (ExtJS, Angular, React) following MVVM or MVC patterns</li>
+                        <li>• Linux system experience and command line proficiency</li>
+                        <li>• Comfortable working independently and as part of a cross-functional team</li>
                       </ul>
                     </div>
 
@@ -171,7 +177,7 @@ const Careers = () => {
 
                     <div className="pt-6 border-t border-border">
                       <Button 
-                        onClick={() => handleApply('Angular Front-End / Full Stack Developer')}
+                        onClick={() => handleApply('Full Stack Developer')}
                         className="w-full sm:w-auto px-8 py-3"
                       >
                         Apply Now
