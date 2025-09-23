@@ -77,7 +77,7 @@ const Careers = () => {
                       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <MapPin size={14} />
-                          <span>Atlantic City, NJ (2-3 days/week)</span>
+                          <span>Atlantic City, NJ</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock size={14} />
@@ -98,13 +98,20 @@ const Careers = () => {
                 <AccordionContent className="px-6 pb-6">
                   <div className="space-y-6">
                     <div className="bg-muted/50 p-4 rounded-lg">
-                      <p className="text-sm font-medium mb-2">Requirements & Tech Stack:</p>
-                      <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
-                      <p className="text-sm text-muted-foreground">B.S. in CS/Engineering required</p>
-                      <p className="text-sm text-muted-foreground mt-2">Database: MariaDB, MySQL, MS SQL Server, Oracle, PostGres, MongoDB</p>
-                      <p className="text-sm text-muted-foreground">Application Layer: ColdFusion, PHP, Java, Python, NodeJS</p>
-                      <p className="text-sm text-muted-foreground">UI/UX: ExtJS, Angular, React (MVVM/MVC frameworks)</p>
-                      <p className="text-sm text-muted-foreground">Linux experience required</p>
+                      <p className="text-sm font-medium mb-3">Requirements & Tech Stack:</p>
+                      <div className="space-y-2">
+                        <p className="text-sm text-muted-foreground">• U.S. citizenship required</p>
+                        <p className="text-sm text-muted-foreground">• B.S. in CS/Engineering required</p>
+                        <p className="text-sm text-muted-foreground">• Linux experience required</p>
+                      </div>
+                      <div className="mt-4 space-y-2">
+                        <p className="text-sm font-medium">Tech Stack:</p>
+                        <div className="ml-2 space-y-1">
+                          <p className="text-sm text-muted-foreground">• Database: MariaDB, MySQL, MS SQL Server, Oracle, PostGres, MongoDB</p>
+                          <p className="text-sm text-muted-foreground">• Application Layer: ColdFusion, PHP, Java, Python, NodeJS</p>
+                          <p className="text-sm text-muted-foreground">• UI/UX: ExtJS, Angular, React (MVVM/MVC frameworks)</p>
+                        </div>
+                      </div>
                     </div>
 
                     <div>
@@ -117,7 +124,6 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Developing full stack web applications from database to client layer</li>
                         <li>• Working with databases like MariaDB, MySQL, MS SQL Server, Oracle, PostGres, or MongoDB</li>
                         <li>• Building application server logic using ColdFusion, PHP, Java, Python, or NodeJS</li>
                         <li>• Creating responsive user interfaces with ExtJS, Angular, React or similar MVVM/MVC frameworks</li>
