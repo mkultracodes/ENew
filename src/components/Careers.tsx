@@ -98,11 +98,11 @@ const Careers = () => {
                 <AccordionContent className="px-6 pb-6">
                   <div className="space-y-6">
                     <div className="bg-muted/50 p-4 rounded-lg">
-                      <p className="text-sm font-medium mb-3">Requirements & Tech Stack:</p>
-                      <div className="space-y-2">
-                        <p className="text-sm text-muted-foreground">• U.S. citizenship required</p>
-                        <p className="text-sm text-muted-foreground">• B.S. in CS/Engineering required</p>
-                        <p className="text-sm text-muted-foreground">• Linux experience required</p>
+                      <p className="text-sm font-medium mb-3">Requirements:</p>
+                      <div className="space-y-1">
+                        <p className="text-sm text-muted-foreground">U.S. citizenship required</p>
+                        <p className="text-sm text-muted-foreground">B.S. in CS/Engineering required</p>
+                        <p className="text-sm text-muted-foreground">Linux experience required</p>
                       </div>
                       <div className="mt-4 space-y-2">
                         <p className="text-sm font-medium">Tech Stack:</p>
@@ -178,7 +178,7 @@ const Careers = () => {
                           <span className="text-primary font-semibold">$110,000 – $170,000</span>
                         </div>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-3">*Salary ranges are location dependent</p>
+                      
                     </div>
 
                     <div className="pt-6 border-t border-border">
