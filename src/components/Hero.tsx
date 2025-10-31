@@ -2,13 +2,14 @@
 import { motion, useAnimation } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useIsMobile } from '../hooks/use-mobile';
 
 const Hero = () => {
   const controls = useAnimation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mousePositionRef = useRef({ x: 0, y: 0 });
+  const [, forceUpdate] = useState({});
   const isMobile = useIsMobile();
   
   const images = [
@@ -27,24 +28,33 @@ const Hero = () => {
       }
     });
 
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX / window.innerWidth,
-        y: e.clientY / window.innerHeight
+    let rafId: number;
+    const handleMouseMove = (e: MouseEvent) => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        mousePositionRef.current = {
+          x: e.clientX / window.innerWidth,
+          y: e.clientY / window.innerHeight
+        };
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    if (!isMobile) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
 
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
     }, 5000);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (!isMobile) {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
+      if (rafId) cancelAnimationFrame(rafId);
       clearInterval(slideInterval);
     };
-  }, [controls, images.length]);
+  }, [controls, images.length, isMobile]);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -86,28 +96,28 @@ const Hero = () => {
         />
       ))}
       
-      {/* Floating elements that react to mouse position */}
+      {/* Simplified floating elements */}
       {!isMobile && (
         <div className="absolute inset-0 z-1 pointer-events-none">
-          {[...Array(12)].map((_, i) => (
+          {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute rounded-full bg-primary/20 backdrop-blur-sm"
               style={{
-                width: 20 + Math.random() * 60,
-                height: 20 + Math.random() * 60,
-                left: `${10 + Math.random() * 80}%`,
-                top: `${10 + Math.random() * 80}%`,
+                width: 30 + Math.random() * 40,
+                height: 30 + Math.random() * 40,
+                left: `${15 + Math.random() * 70}%`,
+                top: `${15 + Math.random() * 70}%`,
               }}
               animate={{
-                x: mousePosition.x * (i % 2 === 0 ? -20 : 20),
-                y: mousePosition.y * (i % 3 === 0 ? -20 : 20),
-                opacity: 0.4 + Math.random() * 0.6
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.6, 0.3]
               }}
               transition={{
-                type: "spring",
-                damping: 15,
-                stiffness: 50
+                duration: 3 + i,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
               }}
             />
           ))}

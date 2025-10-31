@@ -14,8 +14,8 @@ type Particle = {
 
 const ParticleCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const mousePositionRef = useRef({ x: 0, y: 0 });
+  const isHoveringRef = useRef(false);
   
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -36,7 +36,7 @@ const ParticleCanvas = () => {
     
     // Create particles
     const createParticles = () => {
-      const particleCount = Math.floor(window.innerWidth / 15); // More particles
+      const particleCount = Math.floor(window.innerWidth / 30); // Reduced particles for better performance
       particles = [];
       
       for (let i = 0; i < particleCount; i++) {
@@ -100,9 +100,9 @@ const ParticleCanvas = () => {
         ctx.fill();
         
         // Apply force toward mouse when hovering
-        if (isHovering) {
-          const dx = mousePosition.x - particle.x;
-          const dy = mousePosition.y - particle.y;
+        if (isHoveringRef.current) {
+          const dx = mousePositionRef.current.x - particle.x;
+          const dy = mousePositionRef.current.y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           const maxDistance = 150;
           
@@ -187,21 +187,21 @@ const ParticleCanvas = () => {
     
     // Mouse move handler
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      mousePositionRef.current = { x: e.clientX, y: e.clientY };
       
-      // Create burst particles on mouse move
-      if (Math.random() > 0.92) {
+      // Create burst particles on mouse move (less frequently)
+      if (Math.random() > 0.96) {
         createHoverParticles(e.clientX, e.clientY);
       }
     };
     
     // Mouse enter/leave handlers
     const handleMouseEnter = () => {
-      setIsHovering(true);
+      isHoveringRef.current = true;
     };
     
     const handleMouseLeave = () => {
-      setIsHovering(false);
+      isHoveringRef.current = false;
     };
     
     // Initialize
@@ -224,7 +224,7 @@ const ParticleCanvas = () => {
       canvas.removeEventListener("mouseenter", handleMouseEnter);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [mousePosition, isHovering]);
+  }, []); // Empty dependency array - only run once
   
   return (
     <canvas
