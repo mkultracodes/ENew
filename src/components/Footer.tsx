@@ -15,7 +15,7 @@ const Footer = () => {
               <img 
                 src={eyrieLogo} 
                 alt="Eyrie Networks Logo" 
-                className="h-8 md:h-10 w-auto"
+                className="h-12 sm:h-14 md:h-16 w-auto"
                 style={{ filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)' }}
               />
             </Link>
