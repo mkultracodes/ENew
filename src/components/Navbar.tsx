@@ -44,7 +44,7 @@ const Navbar = () => {
               <img 
                 src={eyrieLogo} 
                 alt="Eyrie Networks Logo" 
-                className="h-8 sm:h-9 md:h-10 w-auto"
+                className="h-10 sm:h-12 md:h-14 w-auto"
               />
             </Link>
           </motion.div>
