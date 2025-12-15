@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+import eyrieLogo from '@/assets/eyrie-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +42,7 @@ const Navbar = () => {
           >
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/8a0274ff-f0c5-4fa1-b1a5-5bf82fa0e51d.png" 
+                src={eyrieLogo} 
                 alt="Eyrie Networks Logo" 
                 className="h-8 sm:h-9 md:h-10 w-auto"
               />
