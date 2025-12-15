@@ -70,11 +70,11 @@ const About = () => {
             variants={fadeInUp}
           >
             <h3 className="text-2xl font-bold">Our Values</h3>
-            <div className="space-y-4">
+            <div className="flex md:flex-col gap-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 no-visible-scrollbar">
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
-                  className="glass-card p-6 rounded-xl"
+                  className="glass-card p-6 rounded-xl min-w-[280px] md:min-w-0 flex-shrink-0 md:flex-shrink"
                   whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -106,20 +106,20 @@ const About = () => {
           variants={fadeInUp}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="glass-card p-6 rounded-xl">
+          <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 no-visible-scrollbar">
+            <div className="glass-card p-6 rounded-xl min-w-[280px] md:min-w-0 flex-shrink-0 md:flex-shrink">
               <h4 className="text-xl font-bold mb-4">Expertise</h4>
               <p className="text-muted-foreground text-xl">
                 We strive to incorporate the appropriate technical expertise, process improvement, and innovation to deliver quality solutions.
               </p>
             </div>
-            <div className="glass-card p-6 rounded-xl">
+            <div className="glass-card p-6 rounded-xl min-w-[280px] md:min-w-0 flex-shrink-0 md:flex-shrink">
               <h4 className="text-xl font-bold mb-4">Distinctive Ability</h4>
               <p className="text-muted-foreground">
                 Our customers have openly reported that they contact Eyrie Networks because of our distinctive ability to quickly assess their needs and offer innovative solutions that routinely exceed their expectations.
               </p>
             </div>
-            <div className="glass-card p-6 rounded-xl">
+            <div className="glass-card p-6 rounded-xl min-w-[280px] md:min-w-0 flex-shrink-0 md:flex-shrink">
               <h4 className="text-xl font-bold mb-4">Agile Approach</h4>
               <p className="text-muted-foreground">
                 Due to the agile nature of our business model, our teams are able to quickly adapt to the client's dynamic environment to ensure that we deliver the solutions that they need to successfully achieve their goals.
