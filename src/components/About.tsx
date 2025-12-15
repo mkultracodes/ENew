@@ -10,7 +10,7 @@ const About = () => {
 
   const values = [
     {
-      title: "Value",
+      title: "Principle",
       description: "Take the time to understand our customers and their needs"
     },
     {
