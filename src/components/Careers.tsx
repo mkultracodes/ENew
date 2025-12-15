@@ -122,9 +122,9 @@ const Careers = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3">What You'll Be Doing</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>• Working with databases like MariaDB, MySQL, MS SQL Server, Oracle, PostGres, or MongoDB</li>
-                        <li>• Building application server logic using ColdFusion, PHP, Java, Python, or NodeJS</li>
-                        <li>• Creating responsive user interfaces with ExtJS, Angular, React or similar MVVM/MVC frameworks</li>
+                        <li>• Working with databases</li>
+                        <li>• Building application server logic</li>
+                        <li>• Creating responsive user interfaces</li>
                         <li>• Working in Linux environments and managing deployments</li>
                         <li>• Writing clean, maintainable code and working with version control systems</li>
                         <li>• Collaborating with team members to deliver functional solutions</li>
