@@ -24,7 +24,7 @@ const Footer = () => {
             </p>
           </div>
           
-          <div>
+          <div className="md:pt-20">
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-2">
