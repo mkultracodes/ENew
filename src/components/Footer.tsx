@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="inline-block mb-6">
               <img 
@@ -22,32 +22,6 @@ const Footer = () => {
             <p className="text-white/80 max-w-md mt-4">
               Our mission at Eyrie Networks is to provide customers with high quality IT Services that include architecture, design, and integration of new or modernization of legacy IT solutions.
             </p>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Navigation</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-white/80 hover:text-white transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-white/80 hover:text-white transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="text-white/80 hover:text-white transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
           </div>
           
           <div>
