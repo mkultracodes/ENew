@@ -2,8 +2,9 @@
 import { motion } from 'framer-motion';
 import { Phone, MapPin } from 'lucide-react';
 import { useState } from 'react';
-
+import { useToast } from '@/hooks/use-toast';
 const Contact = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,8 +35,10 @@ const Contact = () => {
     })
     .then(response => {
       if (response.ok) {
-        console.log('Form submitted successfully');
-        // Optional: Reset form or show success message
+        toast({
+          title: "Message sent!",
+          description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+        });
         setFormData({
           name: '',
           email: '',
@@ -43,11 +46,19 @@ const Contact = () => {
           message: ''
         });
       } else {
-        console.error('Form submission failed');
+        toast({
+          title: "Submission failed",
+          description: "Please try again or contact us directly.",
+          variant: "destructive",
+        });
       }
     })
     .catch(error => {
-      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
     });
   };
 
