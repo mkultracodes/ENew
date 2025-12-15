@@ -90,7 +90,7 @@ const Careers = () => {
                       </div>
                     </div>
                     <div className="mt-4 md:mt-0 text-right">
-                      <div className="text-lg font-semibold text-blue-600">$65,000 - $170,000</div>
+                      <div className="text-lg font-semibold text-blue-600">$65,000 - $110,000</div>
                       <div className="text-sm text-muted-foreground">Multiple levels</div>
                     </div>
                   </div>
@@ -169,10 +169,6 @@ const Careers = () => {
                         <div className="flex flex-col sm:flex-row sm:justify-between p-3 bg-muted/30 rounded-lg">
                           <span className="font-medium">Mid-Level (5-10 years)</span>
                           <span className="text-primary font-semibold">$80,000 – $110,000</span>
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:justify-between p-3 bg-muted/30 rounded-lg">
-                          <span className="font-medium">Senior (10+ years)</span>
-                          <span className="text-primary font-semibold">$110,000 – $170,000</span>
                         </div>
                       </div>
                       
