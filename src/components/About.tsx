@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const About = () => {
@@ -46,40 +46,35 @@ const About = () => {
     }
   ];
 
-  // Auto-scroll for values section on mobile
-  useEffect(() => {
-    if (!isMobile) return;
-    
-    const interval = setInterval(() => {
-      setValuesIndex((prev) => (prev + 1) % values.length);
-    }, 4000);
+  const handleValuesScroll = () => {
+    if (!valuesRef.current || !isMobile) return;
+    const scrollLeft = valuesRef.current.scrollLeft;
+    const cardWidth = valuesRef.current.scrollWidth / values.length;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    setValuesIndex(newIndex);
+  };
 
-    return () => clearInterval(interval);
-  }, [isMobile, values.length]);
+  const handleCardsScroll = () => {
+    if (!cardsRef.current || !isMobile) return;
+    const scrollLeft = cardsRef.current.scrollLeft;
+    const cardWidth = cardsRef.current.scrollWidth / cards.length;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    setCardsIndex(newIndex);
+  };
 
-  // Auto-scroll for cards section on mobile
-  useEffect(() => {
-    if (!isMobile) return;
-    
-    const interval = setInterval(() => {
-      setCardsIndex((prev) => (prev + 1) % cards.length);
-    }, 4000);
+  const scrollToValue = (index: number) => {
+    if (!valuesRef.current) return;
+    const cardWidth = valuesRef.current.scrollWidth / values.length;
+    valuesRef.current.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+    setValuesIndex(index);
+  };
 
-    return () => clearInterval(interval);
-  }, [isMobile, cards.length]);
-
-  // Scroll to the correct card when index changes
-  useEffect(() => {
-    if (!isMobile || !valuesRef.current) return;
-    const scrollWidth = valuesRef.current.scrollWidth / values.length;
-    valuesRef.current.scrollTo({ left: scrollWidth * valuesIndex, behavior: 'smooth' });
-  }, [valuesIndex, isMobile, values.length]);
-
-  useEffect(() => {
-    if (!isMobile || !cardsRef.current) return;
-    const scrollWidth = cardsRef.current.scrollWidth / cards.length;
-    cardsRef.current.scrollTo({ left: scrollWidth * cardsIndex, behavior: 'smooth' });
-  }, [cardsIndex, isMobile, cards.length]);
+  const scrollToCard = (index: number) => {
+    if (!cardsRef.current) return;
+    const cardWidth = cardsRef.current.scrollWidth / cards.length;
+    cardsRef.current.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+    setCardsIndex(index);
+  };
 
   return (
     <section id="about" className="py-24 bg-secondary/30">
@@ -130,12 +125,13 @@ const About = () => {
             <h3 className="text-2xl font-bold">Our Values</h3>
             <div 
               ref={valuesRef}
+              onScroll={handleValuesScroll}
               className="flex md:block gap-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none no-visible-scrollbar md:space-y-4"
             >
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
-                  className="glass-card p-6 rounded-xl min-w-[85vw] sm:min-w-[300px] md:min-w-0 md:w-full flex-shrink-0 md:flex-shrink snap-center"
+                  className="glass-card p-6 rounded-xl w-full min-w-full md:min-w-0 md:w-full flex-shrink-0 snap-center"
                   whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -157,19 +153,18 @@ const About = () => {
               ))}
             </div>
             {/* Mobile indicators */}
-            {isMobile && (
-              <div className="flex justify-center gap-2 md:hidden">
-                {values.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setValuesIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === valuesIndex ? 'bg-primary' : 'bg-primary/30'
-                    }`}
-                  />
-                ))}
-              </div>
-            )}
+            <div className="flex justify-center gap-2 md:hidden">
+              {values.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToValue(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === valuesIndex ? 'bg-primary' : 'bg-primary/30'
+                  }`}
+                  aria-label={`Go to card ${index + 1}`}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
 
@@ -183,12 +178,13 @@ const About = () => {
         >
           <div 
             ref={cardsRef}
+            onScroll={handleCardsScroll}
             className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none no-visible-scrollbar"
           >
-            {cards.map((card, index) => (
+            {cards.map((card) => (
               <div 
                 key={card.title}
-                className="glass-card p-6 rounded-xl min-w-[85vw] sm:min-w-[300px] md:min-w-0 flex-shrink-0 md:flex-shrink snap-center"
+                className="glass-card p-6 rounded-xl w-full min-w-full md:min-w-0 flex-shrink-0 snap-center"
               >
                 <h4 className="text-xl font-bold mb-4">{card.title}</h4>
                 <p className="text-muted-foreground">{card.description}</p>
@@ -196,19 +192,18 @@ const About = () => {
             ))}
           </div>
           {/* Mobile indicators */}
-          {isMobile && (
-            <div className="flex justify-center gap-2 mt-4 md:hidden">
-              {cards.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCardsIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === cardsIndex ? 'bg-primary' : 'bg-primary/30'
-                  }`}
-                />
-              ))}
-            </div>
-          )}
+          <div className="flex justify-center gap-2 mt-4 md:hidden">
+            {cards.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToCard(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === cardsIndex ? 'bg-primary' : 'bg-primary/30'
+                }`}
+                aria-label={`Go to card ${index + 1}`}
+              />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
