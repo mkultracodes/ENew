@@ -187,7 +187,7 @@ const Careers = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Hardware Engineer Position - Second */}
+              {/* Hardware Engineer Position - Hidden for now
               <AccordionItem value="hardware-engineer" className="glass-card rounded-xl overflow-hidden">
                 <AccordionTrigger className="px-6 py-6 hover:no-underline">
                   <div className="flex flex-col md:flex-row md:items-center justify-between w-full text-left">
@@ -273,6 +273,7 @@ const Careers = () => {
                   </div>
                 </AccordionContent>
               </AccordionItem>
+              */}
             </Accordion>
           </motion.div>
         </div>
