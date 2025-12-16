@@ -8,7 +8,7 @@ const Footer = () => {
   
   return (
     <footer className="text-white">
-      <div className="bg-gradient-to-b from-[#1a5a7a] to-primary">
+      <div className="bg-[#1a5a7a]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="bg-primary">
+      <div className="bg-[#1a5a7a]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {currentYear} Eyrie Networks. All rights reserved.</p>
           <p className="mt-4 md:mt-0">Minority Owned, Small Disadvantaged Business (SDB)</p>
